@@ -8,5 +8,9 @@ import androidx.lifecycle.MutableLiveData
  */
 class CurrenciesActivityRepository(application: Application) {
 
-    val showProgress: MutableLiveData<Boolean>()
+    val showProgress = MutableLiveData<Boolean>()
+
+    fun changeState(){
+        showProgress.value = !(showProgress.value !=null && showProgress.value!!)
+    }
 }

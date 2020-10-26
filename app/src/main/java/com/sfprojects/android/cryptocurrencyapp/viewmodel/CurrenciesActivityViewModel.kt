@@ -16,4 +16,8 @@ class CurrenciesActivityViewModel(application: Application): AndroidViewModel(ap
     init{
         this.showProgress = repository.showProgress
     }
+
+    fun changeState(){
+        repository.changeState()
+    }
 }
