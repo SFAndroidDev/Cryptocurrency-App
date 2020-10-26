@@ -21,7 +21,10 @@ class CurrenciesActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this)
             .get(CurrenciesActivityViewModel::class.java)
 
-        viewModel.changeState()
+        btn_start.setOnClickListener{
+            viewModel.changeState()
+        }
+
 
         viewModel.showProgress.observe(this, Observer{
             if (it){
