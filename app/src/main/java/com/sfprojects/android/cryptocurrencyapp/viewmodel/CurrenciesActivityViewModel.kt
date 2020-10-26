@@ -10,7 +10,7 @@ import com.sfprojects.android.cryptocurrencyapp.repository.CurrenciesActivityRep
  */
 class CurrenciesActivityViewModel(application: Application): AndroidViewModel(application) {
 
-    val repository = CurrenciesActivityRepository(application)
+    private val repository = CurrenciesActivityRepository(application)
     val showProgress: LiveData<Boolean>
 
     init{
