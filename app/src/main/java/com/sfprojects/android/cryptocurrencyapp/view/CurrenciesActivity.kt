@@ -22,7 +22,8 @@ class CurrenciesActivity : AppCompatActivity() {
             .get(CurrenciesActivityViewModel::class.java)
 
         btn_start.setOnClickListener{
-            viewModel.changeState()
+            // viewModel.changeState()
+            viewModel.fetchTopCoins()
         }
 
 

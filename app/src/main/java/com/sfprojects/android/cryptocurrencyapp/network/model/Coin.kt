@@ -1,16 +1,13 @@
 package com.sfprojects.android.cryptocurrencyapp.network.model
 
 data class Coin(
-    val blockNumber: Int,
-    val blockReward: Int,
-    val blockTime: Int,
-    val documentType: String,
-    val fullName: String,
-    val imageUrl: String,
-    val netHashesPerSecond: Int,
-    val rating: Rating,
-    val type: Int,
-    val url: String,
-    val id: String,
-    val name: String
+    val Algorithm: String,
+    val FullName: String,
+    val Id: String,
+    val ImageUrl: String,
+    val Internal: String,
+    val Name: String,
+    val ProofType: String,
+    val Rating: Rating,
+    val Url: String
 )

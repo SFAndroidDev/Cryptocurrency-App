@@ -20,4 +20,8 @@ class CurrenciesActivityViewModel(application: Application): AndroidViewModel(ap
     fun changeState(){
         repository.changeState()
     }
+
+    fun fetchTopCoins(){
+        repository.fetchTopCoins()
+    }
 }
