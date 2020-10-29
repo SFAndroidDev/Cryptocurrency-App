@@ -32,5 +32,17 @@ class CurrenciesActivity : AppCompatActivity() {
                 pb_currencies_list.visibility = GONE
             }
         })
+
+        viewModel.coinResponse.observe(this, Observer{
+            if (it != null){
+                if (pageNumber == 1){
+                    setupRecyclerView(it)
+                }
+                else{
+                    dialogLoader.hideProgressDialog();
+                    adapter.addItems(it.data)
+                }
+            }
+        })
     }
 }

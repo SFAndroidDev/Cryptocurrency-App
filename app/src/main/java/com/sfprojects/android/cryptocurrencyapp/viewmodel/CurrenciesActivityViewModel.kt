@@ -3,6 +3,7 @@ package com.sfprojects.android.cryptocurrencyapp.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import com.sfprojects.android.cryptocurrencyapp.network.model.CoinResponse
 import com.sfprojects.android.cryptocurrencyapp.repository.CurrenciesActivityRepository
 
 /**
@@ -12,9 +13,11 @@ class CurrenciesActivityViewModel(application: Application): AndroidViewModel(ap
 
     private val repository = CurrenciesActivityRepository(application)
     val showProgress: LiveData<Boolean>
+    val coinResponse : LiveData<CoinResponse>
 
     init{
         this.showProgress = repository.showProgress
+        this.coinResponse = repository.coinResponse
     }
 
     fun changeState(){
