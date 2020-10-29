@@ -22,11 +22,7 @@ class CurrenciesActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this)
             .get(CurrenciesActivityViewModel::class.java)
 
-        btn_start.setOnClickListener{
-            // viewModel.changeState()
-            viewModel.fetchTopCoins(pageNumber)
-        }
-
+        viewModel.fetchTopCoins(pageNumber) //Loading the data from API
 
         viewModel.showProgress.observe(this, Observer{
             if (it){
