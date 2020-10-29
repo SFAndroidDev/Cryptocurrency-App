@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.sfprojects.android.cryptocurrencyapp.network.BASE_URL
 import com.sfprojects.android.cryptocurrencyapp.network.CurrenciesNetwork
-import com.sfprojects.android.cryptocurrencyapp.network.model.Coin
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

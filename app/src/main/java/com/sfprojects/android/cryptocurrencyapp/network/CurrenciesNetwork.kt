@@ -1,6 +1,5 @@
 package com.sfprojects.android.cryptocurrencyapp.network
 
-import com.sfprojects.android.cryptocurrencyapp.network.model.Coin
 import retrofit2.Call
 import retrofit2.http.GET
 
