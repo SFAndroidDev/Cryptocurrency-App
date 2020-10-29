@@ -1,4 +1,4 @@
-package com.sfprojects.android.cryptocurrencyapp.view
+package com.sfprojects.android.cryptocurrencyapp.view.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
