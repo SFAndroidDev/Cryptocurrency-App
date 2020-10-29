@@ -12,6 +12,7 @@ import com.sfprojects.android.cryptocurrencyapp.R
 import com.sfprojects.android.cryptocurrencyapp.network.model.CoinResponse
 import com.sfprojects.android.cryptocurrencyapp.view.adapters.MyAdapter
 import com.sfprojects.android.cryptocurrencyapp.view.adapters.PaginationScrollListener
+import com.sfprojects.android.cryptocurrencyapp.view.dialog.DialogLoader
 import com.sfprojects.android.cryptocurrencyapp.viewmodel.CurrenciesActivityViewModel
 import kotlinx.android.synthetic.main.activity_currencies.*
 
@@ -77,7 +78,7 @@ class CurrenciesActivity : AppCompatActivity() {
 
             override fun loadMoreItems() {
                 isLoading = true
-                //you have to call loadmore items to get more data
+                //you have to call load more items to get more data
                 pageNumber ++
                 viewModel.fetchTopCoins(pageNumber)
                 dialogLoader.showProgressDialog();
