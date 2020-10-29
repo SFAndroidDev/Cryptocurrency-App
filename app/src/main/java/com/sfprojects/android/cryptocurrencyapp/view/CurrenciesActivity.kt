@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_currencies.*
 class CurrenciesActivity : AppCompatActivity() {
 
     private lateinit var viewModel: CurrenciesActivityViewModel
+    private var pageNumber: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +24,7 @@ class CurrenciesActivity : AppCompatActivity() {
 
         btn_start.setOnClickListener{
             // viewModel.changeState()
-            viewModel.fetchTopCoins()
+            viewModel.fetchTopCoins(pageNumber)
         }
 
 
