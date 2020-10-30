@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.coin_layout.view.*
  */
 const val BASE_ICON_URL = "https://www.cryptocompare.com/"
 
-class MyAdapter (val activity: Activity, var data: MutableList<Datum>) :
+class MyAdapter (private val activity: Activity, var data: MutableList<Datum>) :
     RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
     fun addItems(data: List<Datum>) {

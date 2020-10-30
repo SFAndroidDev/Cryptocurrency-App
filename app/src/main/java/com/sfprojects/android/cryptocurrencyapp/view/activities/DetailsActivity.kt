@@ -17,6 +17,6 @@ class DetailsActivity : AppCompatActivity() {
 
         Log.d("DETAILS_TAG", "onCreate: ")
 
-        tv_details.text = Gson().toJson(data!!.display.eur)
+        tv_coin_details.text = Gson().toJson(data!!.display.eur)
     }
 }
