@@ -15,15 +15,13 @@ import com.sfprojects.android.cryptocurrencyapp.R
 /**
  * DialogLoader will be used to show and hide Dialog with ProgressBar
  **/
-class DialogLoader {
-    private var context: Context? = null
+class DialogLoader(private var context: Context?) {
     private var alertDialog: AlertDialog? = null
     private var dialog: AlertDialog.Builder? = null
     private var layoutInflater: LayoutInflater? = null
 
 
-    fun DialogLoader(context: Context?) {
-        this.context = context
+    init {
         layoutInflater = LayoutInflater.from(context)
         initDialog()
     }
