@@ -63,7 +63,6 @@ class CurrenciesActivity : AppCompatActivity() {
         recyclerView.adapter = adapter;
         recyclerView.layoutManager = layoutManager
 
-
         var isLastPage: Boolean = false
         var isLoading: Boolean = false
 
