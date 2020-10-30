@@ -43,14 +43,15 @@ class MyAdapter (val activity: Activity, var data: MutableList<Datum>) :
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindViews(activity: Activity, datum: Datum) {
-            var coinIconImageView = this.itemView.iv_coin_icon as ImageView
-           // val imageView = this.itemView.findViewById(R.id.iv_coin_icon) as ImageView
-            val coinPriceEurTextView = this.itemView.findViewById(R.id.tv_coin_price_eur) as TextView
-            val coinNameTextView = this.itemView.findViewById(R.id.tv_coin_name) as TextView
+            val coinIconImageView = this.itemView.iv_coin_icon as ImageView
+            val coinPriceEurTextView = this.itemView.tv_coin_price_eur as TextView
+            val coinNameTextView = this.itemView.tv_coin_name as TextView
+            val coinSymbolTextView = this.itemView.tv_coin_symbol as TextView
 
             //coinIconImageView.drawable = datum.coinInfo.imageUrl as ImageView
             Picasso.get().load(BASE_ICON_URL + datum.coinInfo.imageUrl).into(coinIconImageView);
-            coinNameTextView.text = datum.coinInfo.fullName + " (" + datum.coinInfo.name + ") "
+            coinNameTextView.text = datum.coinInfo.fullName
+            coinSymbolTextView.text = datum.coinInfo.name
             coinPriceEurTextView.text = datum.display.eur.price
 
             itemView.setOnClickListener {
