@@ -27,6 +27,8 @@ class CurrenciesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_currencies)
 
+        dialogLoader = DialogLoader(this);
+
         viewModel = ViewModelProvider(this)
             .get(CurrenciesActivityViewModel::class.java)
 
@@ -77,7 +79,6 @@ class CurrenciesActivity : AppCompatActivity() {
 
             override fun loadMoreItems() {
                 isLoading = true
-                //you have to call load more items to get more data
                 pageNumber ++
                 viewModel.fetchTopCoins(pageNumber)
                 dialogLoader.showProgressDialog();
