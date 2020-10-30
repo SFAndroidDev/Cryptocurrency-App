@@ -48,7 +48,6 @@ class MyAdapter (private val activity: Activity, var data: MutableList<Datum>) :
             val coinNameTextView = this.itemView.tv_coin_name as TextView
             val coinSymbolTextView = this.itemView.tv_coin_symbol as TextView
 
-            //coinIconImageView.drawable = datum.coinInfo.imageUrl as ImageView
             Picasso.get().load(BASE_ICON_URL + datum.coinInfo.imageUrl).into(coinIconImageView);
             coinNameTextView.text = datum.coinInfo.fullName
             coinSymbolTextView.text = datum.coinInfo.name
