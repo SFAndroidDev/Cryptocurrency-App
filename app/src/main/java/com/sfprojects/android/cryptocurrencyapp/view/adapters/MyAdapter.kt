@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sfprojects.android.cryptocurrencyapp.R
 import com.sfprojects.android.cryptocurrencyapp.network.model.Datum
 import com.sfprojects.android.cryptocurrencyapp.view.activities.DetailsActivity
+import kotlinx.android.synthetic.main.coin_layout.view.*
 
 /**
  * Created by SFDevelop on 10/29/20.
@@ -39,12 +40,14 @@ class MyAdapter (val activity: Activity, var data: MutableList<Datum>) :
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindViews(activity: Activity, datum: Datum) {
-            val imageView = this.itemView.findViewById(R.id.iv_coin_icon) as ImageView
-            val tv_coin_price_eur = this.itemView.findViewById(R.id.tv_coin_price_eur) as TextView
-            val tv_coin_name = this.itemView.findViewById(R.id.tv_coin_name) as TextView
+            var coinIconImageView = this.itemView.iv_coin_icon as ImageView
+           // val imageView = this.itemView.findViewById(R.id.iv_coin_icon) as ImageView
+            val coinPriceEurTextView = this.itemView.findViewById(R.id.tv_coin_price_eur) as TextView
+            val coinNameTextView = this.itemView.findViewById(R.id.tv_coin_name) as TextView
 
-            tv_coin_name.text = datum.coinInfo.fullName + " (" + datum.coinInfo.name + ") "
-            tv_coin_price_eur.text = datum.display.eur.price
+            //coinIconImageView.drawable = datum.coinInfo.imageUrl as ImageView
+            coinNameTextView.text = datum.coinInfo.fullName + " (" + datum.coinInfo.name + ") "
+            coinPriceEurTextView.text = datum.display.eur.price
 
             itemView.setOnClickListener {
                 val intent = Intent(activity, DetailsActivity::class.java)
