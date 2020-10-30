@@ -11,11 +11,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sfprojects.android.cryptocurrencyapp.R
 import com.sfprojects.android.cryptocurrencyapp.network.model.Datum
 import com.sfprojects.android.cryptocurrencyapp.view.activities.DetailsActivity
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.coin_layout.view.*
 
 /**
  * Created by SFDevelop on 10/29/20.
  */
+const val BASE_ICON_URL = "https://www.cryptocompare.com/"
+
 class MyAdapter (val activity: Activity, var data: MutableList<Datum>) :
     RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
@@ -30,7 +33,7 @@ class MyAdapter (val activity: Activity, var data: MutableList<Datum>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindViews(activity = activity, datum = data.get(position))
+        holder.bindViews(activity = activity, datum = data[position])
     }
 
     override fun getItemCount(): Int {
@@ -46,6 +49,7 @@ class MyAdapter (val activity: Activity, var data: MutableList<Datum>) :
             val coinNameTextView = this.itemView.findViewById(R.id.tv_coin_name) as TextView
 
             //coinIconImageView.drawable = datum.coinInfo.imageUrl as ImageView
+            Picasso.get().load(BASE_ICON_URL + datum.coinInfo.imageUrl).into(coinIconImageView);
             coinNameTextView.text = datum.coinInfo.fullName + " (" + datum.coinInfo.name + ") "
             coinPriceEurTextView.text = datum.display.eur.price
 
