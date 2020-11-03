@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CryptoCurrency App</string>
+    <string name="tv1_symbol_text">Symbol :</string>
+    <string name="tv1_full_name_text">Full name :</string>
+    <string name="tv1_price_eur_text">Price (Eur) :</string>
+    <string name="tv1_market_text">Market :</string>
 </resources>
