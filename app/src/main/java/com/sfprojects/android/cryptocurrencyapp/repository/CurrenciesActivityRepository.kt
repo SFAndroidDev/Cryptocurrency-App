@@ -21,6 +21,7 @@ class CurrenciesActivityRepository(val application: Application) {
 
     val showProgress = MutableLiveData<Boolean>()
     val coinResponse = MutableLiveData<CoinResponse>()
+    internal lateinit var service: CurrenciesNetwork
 
     fun changeState(){
         showProgress.value = !(showProgress.value !=null && showProgress.value!!)
@@ -35,7 +36,7 @@ class CurrenciesActivityRepository(val application: Application) {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val service = retrofit.create(CurrenciesNetwork::class.java)
+        service = retrofit.create(CurrenciesNetwork::class.java)
 
         service.getCryptoCurrencies(page_no).enqueue(object : Callback<CoinResponse> {
             override fun onResponse(
@@ -62,4 +63,6 @@ class CurrenciesActivityRepository(val application: Application) {
         })
 
     }
+
+
 }

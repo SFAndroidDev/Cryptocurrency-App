@@ -19,10 +19,10 @@ class DetailsActivity : AppCompatActivity() {
         val data = intent.getSerializableExtra("DATA_PASS_") as? Datum
         Log.d("DETAILS_TAG", "onCreate: ")
         val iconUrl: String = data!!.coinInfo.imageUrl
-        val symbol: String = data!!.coinInfo.name
-        val fullName: String = data!!.coinInfo.fullName
-        val priceEur: String = data!!.display.eur.price
-        val market: String = data!!.display.eur.market
+        val symbol: String = data.coinInfo.name
+        val fullName: String = data.coinInfo.fullName
+        val priceEur: String = data.display.eur.price
+        val market: String = data.display.eur.market
 
         //tv_coin_details.text = Gson().toJson(data!!.display.eur)
 
@@ -31,7 +31,6 @@ class DetailsActivity : AppCompatActivity() {
         tv_full_name.text = fullName
         tv_price.text = priceEur
         tv_market.text = market
-
 
     }
 }
