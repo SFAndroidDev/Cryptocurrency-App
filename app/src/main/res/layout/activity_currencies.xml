@@ -6,10 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".view.activities.CurrenciesActivity">
 
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="These are the currencies on the Toplist by Market Cap"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:textStyle="bold|italic"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/tv_direction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="(Choose any currency for more details)"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:textSize="15sp"
+        android:layout_below="@+id/tv_description"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_currencies_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_direction"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
     <ProgressBar
