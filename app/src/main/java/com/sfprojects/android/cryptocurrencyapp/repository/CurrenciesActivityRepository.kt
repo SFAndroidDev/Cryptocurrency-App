@@ -25,11 +25,10 @@ class CurrenciesActivityRepository(val application: Application) {
 
     val showProgress = MutableLiveData<Boolean>()
     val coinResponse = MutableLiveData<CoinResponse>()
-    internal lateinit var service: CurrenciesNetwork
+    private lateinit var service: CurrenciesNetwork
 
     companion object {
-        const val PERIOD_OF_POLLING: Long = 5
-        //TODO change PERIOD_OF_POLLING to 120 seconds
+        const val PERIOD_OF_POLLING: Long = 120 // PERIOD_OF_POLLING == 2 minutes
     }
 
     fun changeState(){
@@ -49,6 +48,7 @@ class CurrenciesActivityRepository(val application: Application) {
 
         // First API call
         fetchData(page_no)
+        Log.d("MY_COUNTER_TAG", "myCounter: " + myCounter)
 
         // Next API calls
         Observable.interval(PERIOD_OF_POLLING, TimeUnit.SECONDS, Schedulers.io())
@@ -57,7 +57,7 @@ class CurrenciesActivityRepository(val application: Application) {
             .doOnError { error -> Log.i("ERROR_TAG", error.toString()) }
             .retry()
             .subscribe { fetchData(page_no)
-                Log.i("MY_COUNTER_TAG", "myCounter: " + myCounter++)
+                Log.d("MY_COUNTER_TAG", "myCounter: " + ++myCounter)
             }
 
 
@@ -88,8 +88,5 @@ class CurrenciesActivityRepository(val application: Application) {
                 Toast.makeText(application, t.message, Toast.LENGTH_SHORT).show()
             }
         })
-
-
-
 
 }
