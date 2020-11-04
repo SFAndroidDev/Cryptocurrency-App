@@ -1,4 +1,4 @@
-package com.sfprojects.android.cryptocurrencyapp.network
+package com.sfprojects.android.cryptocurrencyapp.network.retrofit
 
 import com.sfprojects.android.cryptocurrencyapp.network.model.CoinResponse
 import retrofit2.Call

@@ -5,8 +5,8 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
-import com.sfprojects.android.cryptocurrencyapp.network.BASE_URL
-import com.sfprojects.android.cryptocurrencyapp.network.CurrenciesNetwork
+import com.sfprojects.android.cryptocurrencyapp.network.retrofit.BASE_URL
+import com.sfprojects.android.cryptocurrencyapp.network.retrofit.CurrenciesNetwork
 import com.sfprojects.android.cryptocurrencyapp.network.model.CoinResponse
 import retrofit2.Call
 import retrofit2.Callback
